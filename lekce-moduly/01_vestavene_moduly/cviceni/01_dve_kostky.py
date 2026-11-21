@@ -7,4 +7,8 @@
 #
 #    Padlo 3 a 5, dohromady 8.
 
+from random import randrange
+hod_jedna = randrange (1,7)
+hod_dva = randrange (1,7)
 
+print ("Padlo",hod_jedna, "a",hod_dva,"a dohromady to je", hod_dva+hod_jedna,".")

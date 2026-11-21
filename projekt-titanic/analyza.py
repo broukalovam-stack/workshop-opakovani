@@ -13,3 +13,10 @@ from pathlib import Path
 # Díky tomu program data najde, ať ho spouštíš odkudkoliv.
 SLOZKA = Path(__file__).parent
 SOUBOR = SLOZKA / "Titanic-Dataset.csv"
+
+
+
+def nacti_pasazery(soubor):
+    with open(soubor, encoding="utf-8") as f:
+        radky = list(csv.DictReader(f))
+        return radky
