@@ -27,3 +27,16 @@ def test_kazdy_pasazer_ma_dvanact_sloupcu():
 def test_jmeno_prvniho_pasazera():
     pasazeri = analyza.nacti_pasazery(analyza.SOUBOR)
     assert pasazeri[0]["Name"] == "Braund, Mr. Owen Harris"
+#2
+def test_cislo():
+    assert analyza.cislo_nebo_nic("22") == 22
+
+def test_prazdny_text():
+    assert analyza.cislo_nebo_nic("") is None
+
+def test_uprav_pasazera():
+    radek = {"Survived": "1", "Pclass": "3", "SibSp": "1", "Parch": "0", "Fare": "7.25", "Age": ""}
+    pasazer = analyza.uprav_pasazera(radek)
+    assert pasazer["Survived"] == 1
+    assert pasazer["Fare"] == 7.25
+    assert pasazer["Age"] is None

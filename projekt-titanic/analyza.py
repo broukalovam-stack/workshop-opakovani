@@ -20,3 +20,26 @@ def nacti_pasazery(soubor):
     with open(soubor, encoding="utf-8") as f:
         radky = list(csv.DictReader(f))
         return radky
+
+def cislo_nebo_nic(text):
+    if text =="":
+        return None
+    else:
+        return (float(text))
+    
+#uprava radku
+def uprav_pasazera(radek):
+    pasazer = radek.copy()
+    pasazer["Survived"] = int(radek["Survived"])
+    pasazer["Pclass"] = int(radek["Pclass"])
+    pasazer["SibSp"] = int(radek["SibSp"])
+    pasazer["Parch"] = int(radek["Parch"])
+    pasazer["Fare"] = float(radek["Fare"])
+    pasazer ["Age"] = cislo_nebo_nic(radek["Age"])
+    return pasazer
+
+def uprav_pasazery(radky):
+    upraveni_pasazeri =[]
+    for radek in radky:
+        upraveni_pasazeri.append(uprav_pasazera(radek))
+    return upraveni_pasazeri
