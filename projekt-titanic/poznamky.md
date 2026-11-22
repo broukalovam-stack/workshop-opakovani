@@ -4,12 +4,19 @@
 
 Čeho jsem si všimla:
 
+891 pasažerů na palubě
 177 pasažerů nemá věk 
 ## Krok 3 – Kdo byl na palubě?
 
-Můj odhad:
+
+Můj odhad: 35 let, nejmlatší byl 0, a byl to chlapec; nejstarší byl 80 a byla to dívka
+
 Výsledek:
 Co mě překvapilo:
+
+Průměrný věk: ??.?
+Nejstarší: ?????, věk ??.?
+Nejmladší: ?????, věk ?.??
 
 ## Krok 4 – Kolik stál lístek?
 

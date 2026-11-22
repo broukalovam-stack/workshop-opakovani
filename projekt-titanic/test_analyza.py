@@ -40,3 +40,26 @@ def test_uprav_pasazera():
     assert pasazer["Survived"] == 1
     assert pasazer["Fare"] == 7.25
     assert pasazer["Age"] is None
+
+def ukazka():
+    # Pět vymyšlených pasažérů. U tak malého seznamu spočítáš výsledek z hlavy.
+    # Každý test si zavolá ukazka() a dostane vlastní čerstvý seznam.
+    return [
+        {"Name": "Nováková, Mrs. Anna", "Sex": "female", "Pclass": 1, "Age": 30.0, "Survived": 1, "SibSp": 1, "Parch": 0, "Fare": 80.0, "Embarked": "S"},
+        {"Name": "Novák, Mr. Jan", "Sex": "male", "Pclass": 1, "Age": 35.0, "Survived": 0, "SibSp": 1, "Parch": 0, "Fare": 80.0, "Embarked": "S"},
+        {"Name": "Svoboda, Master. Petr", "Sex": "male", "Pclass": 3, "Age": 8.0, "Survived": 1, "SibSp": 0, "Parch": 1, "Fare": 10.0, "Embarked": "C"},
+        {"Name": "Dvořák, Mr. Karel", "Sex": "male", "Pclass": 3, "Age": None, "Survived": 0, "SibSp": 0, "Parch": 0, "Fare": 0.0, "Embarked": "Q"},
+        {"Name": "Černá, Miss. Eva", "Sex": "female", "Pclass": 3, "Age": 70.0, "Survived": 1, "SibSp": 0, "Parch": 0, "Fare": 10.0, "Embarked": "C"},
+    ]
+
+def test_prumerny_vek_pocita_jen_znamy_vek():
+    assert analyza.prumerny_vek(ukazka()) == 35.75
+
+def test_prumerny_vek_kdyz_vek_nikdo_nema():
+    assert analyza.prumerny_vek([{"Age": None}]) is None
+
+def test_nejstarsi():
+    assert analyza.nejstarsi(ukazka())["Name"] == "Černá, Miss. Eva"
+
+def test_nejmladsi():
+    assert analyza.nejmladsi(ukazka())["Name"] == "Svoboda, Master. Petr"
